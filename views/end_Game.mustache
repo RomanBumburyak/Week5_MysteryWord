@@ -1,0 +1,48 @@
+<header>
+  <h2>Mystery Word</h2>
+{{#newWord}}
+{{#remainingGuesses}}
+  <p>You have <span class="bold">{{.}} guesses</span> left</p>
+{{/remainingGuesses}}
+{{/newWord}}
+</header>
+
+<main>
+  <div class="wordField">
+    {{#newWord}}
+      {{#guessed}}
+      {{#letter}}
+      <div class="letter_container guessed">
+        {{.}}
+      </div>
+      {{/letter}}
+      {{/guessed}}
+      {{^guessed}}
+      {{#placeholder}}
+      <div class="letter_container not_guessed">
+        {{.}}
+      </div>
+      {{/placeholder}}
+      {{/guessed}}
+    {{/newWord}}
+
+  </div>
+  <div class="guessReq">
+    <form action="/reset" method="post">
+      <h1>You lost man!</h1>
+      <button type="submit">Restart!</button>
+    </form>
+    <p class="guessed"><span class="bold">Letters guessed:</span>
+      {{#newWord}}
+      {{#singleGuess}}
+        {{.}}
+      {{/singleGuess}}
+      {{/newWord}}
+    </p>
+    {{#error}}
+      <p class="error">
+        <p>{{.}}</p>
+      </p>
+    {{/error}}
+  </div>
+</main>

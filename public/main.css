@@ -1,0 +1,21 @@
+.wordField {
+  /*letter-spacing: 10px;*/
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  font-size: 35px;
+};
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: black;
+  font-family: sans-serif;
+};
+
+h2 {
+  text-align: left;
+  font-size: 25px;
+  color: black;
+  font-family: sans-serif;
+};
